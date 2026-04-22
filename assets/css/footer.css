@@ -1,0 +1,168 @@
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+
+.site-footer {
+    background-color: #0d0d0d; /* Czerń */
+    color: #b0b0b0; /* Jasny szary tekst (czytelny na czarnym) */
+    padding-top: 80px;
+    border-top: 1px solid #1f1f1f; /* Delikatna linia oddzielająca od reszty strony */
+    font-size: 15px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr; /* Pierwsza kolumna szersza */
+    gap: 60px;
+}
+
+/* Kolumna 1: Brand */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-logo-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.footer-logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 350px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    border-color: #00C853;
+    color: #00C853;
+}
+
+/* Nagłówki kolumn */
+.footer-col h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+/* Linki i Listy */
+.footer-links ul,
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li,
+.contact-list li {
+    margin-bottom: 15px;
+}
+
+.footer-links a,
+.contact-list a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block; /* Żeby animacja działała płynnie */
+}
+
+.footer-links a:hover,
+.contact-list a:hover {
+    color: #00C853;
+    padding-left: 5px; /* Mały efekt przesunięcia przy hoverze */
+}
+
+/* Kontakt ikony */
+.contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-list .icon {
+    font-size: 18px;
+}
+
+/* Dolny pasek */
+.footer-bottom {
+    background-color: #080808; /* Jeszcze ciemniejszy odcień */
+    padding: 20px 0;
+    border-top: 1px solid #1f1f1f;
+    font-size: 13px;
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-legal a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-legal a:hover {
+    color: #fff;
+}
+
+.separator {
+    margin: 0 10px;
+    color: #333;
+}
+
+/* RESPONSYWNOŚĆ (Mobile) */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Wszystko w jednej kolumnie */
+        gap: 40px;
+        text-align: center; /* Centrujemy tekst na telefonach */
+    }
+
+    .footer-logo, 
+    .contact-list li,
+    .footer-socials {
+        justify-content: center; /* Centrujemy flexboxy */
+    }
+
+    .footer-desc {
+        margin: 0 auto 25px auto; /* Centrujemy opis */
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,251 @@
+/* =========================================
+   STYLE DLA PODSTRONY KADRA
+   ========================================= */
+.site-header nav.static-navigation ul.nav-links li a {
+    color: #ffffff !important;
+}
+
+.site-header nav.static-navigation ul.nav-links li a:hover {
+    color: #4ade80 !important;
+}
+
+.kadra-page-content {
+    background-color: #0b2514;
+    min-height: 100vh;
+}
+/* --- SEKCJA ZAŁOŻYCIELKI --- */
+.founder-container {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.founder-text-box {
+    flex: 1; /* Zajmuje połowę miejsca */
+}
+
+.founder-text-box h2 {
+    color: #fff;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.founder-text-box h3 {
+    color: #4ade80;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.founder-text-box p, 
+.founder-text-box ul {
+    color: #e2e8f0;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.founder-text-box ul {
+    padding-left: 20px;
+}
+
+.founder-text-box li {
+    margin-bottom: 10px;
+}
+
+/* Galeria Magdy - Ułożenie */
+.founder-gallery {
+    flex: 1; /* Zajmuje drugą połowę */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    position: relative;
+}
+
+.founder-gallery img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery-img-main {
+    grid-column: 1 / 3;
+    height: 850px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 2px solid rgba(74, 222, 128, 0.5);
+
+    object-position: 50% 30%;
+}
+
+.gallery-img-side1 {
+    display: block !important;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    object-position: 50% 48%;
+}
+.gallery-img-side2 {
+    display: block !important;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    object-position: 50% 20%;
+}
+
+/* --- SEKCJA AKORDEON (RESZTA ZESPOŁU) --- */
+.team-accordion-section {
+    padding: 60px 20px 100px 20px;
+}
+
+.team-accordion-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Karta pracownika (Pasek) */
+.team-member {
+    background-color: rgba(255, 255, 255, 0.03); /* Bardzo delikatne, szkliste tło */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.team-member.active {
+    background-color: rgba(6, 78, 59, 0.4); /* Zielonkawe tło po rozwinięciu */
+    border-color: #4ade80;
+}
+
+.team-member-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.member-basic-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.member-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4ade80;
+}
+
+.member-name {
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.member-role {
+    color: #4ade80;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.member-toggle-icon {
+    font-size: 1.5rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animacja i ukrywanie tekstu */
+.team-member-content {
+    display: grid;
+    grid-template-rows: 0fr; /* Magia - wysokość 0 na start */
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-inner {
+    overflow: hidden;
+}
+
+.content-inner p {
+    padding: 0 30px 30px 120px; /* Tekst wyrównany do imienia (pod zdjęciem pusto) */
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Co się dzieje po dodaniu klasy active (przez JS) */
+.team-member.active .team-member-content {
+    grid-template-rows: 1fr; /* Rozwinięcie do naturalnej wysokości tekstu */
+}
+
+.team-member.active .member-toggle-icon {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    
+    /* 1. SEKCJA MAGDY -> Zmiana z dwóch kolumn na jedną pionową */
+    .founder-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .founder-text-box h2 {
+        font-size: 2.2rem; /* Trochę mniejszy tytuł na telefon */
+    }
+
+    /* 2. GALERIA -> Na telefonie lekko modyfikujemy siatkę, żeby zdjęcia się zmieściły */
+    .founder-gallery {
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* 3. AKORDEON (ZESPÓŁ) -> Zmniejszamy marginesy i zdjęcia, by pasowało do palca */
+    .team-accordion-section {
+        padding: 40px 15px 80px 15px;
+    }
+
+    .team-member-header {
+        padding: 15px; /* Mniejsze marginesy wewnątrz paska */
+    }
+
+    .member-avatar {
+        width: 55px;
+        height: 55px; /* Trochę mniejsze zdjęcie */
+    }
+
+    .member-name {
+        font-size: 1.15rem;
+    }
+
+    .member-role {
+        font-size: 0.85rem;
+    }
+
+    /* KRYTYCZNE: Na telefonie nie ma miejsca po lewej, więc tekst musi iść na całą szerokość */
+    .content-inner p {
+        padding: 0 20px 20px 20px; /* Zdejmujemy ten wielki 120px padding z lewej */
+        font-size: 1rem;
+    }
+}

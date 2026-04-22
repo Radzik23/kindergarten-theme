@@ -1,0 +1,275 @@
+/* =========================================
+   GLOBALNE 
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    padding-top: 0; /* Zapewnia, że strona zaczyna się od samej góry */
+}
+
+/* =========================================
+   1. HEADER BAZOWY (Na samej górze - Przezroczysty)
+   ========================================= */
+header.site-header {
+    background-color: transparent; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* =========================================
+   2. HEADER PO PRZEWINIĘCIU (Scrolled)
+   ========================================= */
+header.site-header.scrolled {
+    background-color: #0d0d0d;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    height: 90px; /* Lekko się zmniejsza po scrollu dla lepszego efektu premium */
+}
+
+/* =========================================
+   3. LOGO
+   ========================================= */
+.logo-wrapper a.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    color: rgb(40, 40, 40); /* Ciemny tekst na start (bo tło jest przezroczyste/jasne) */
+    transition: color 0.4s ease;
+}
+
+.logo-wrapper img.logo-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin-top: 15px;
+}
+
+/* Biały tekst logo po scrollu (na czarnym tle) */
+header.site-header.scrolled .logo-wrapper a.logo-link {
+    color: #ffffff;
+}
+
+/* =========================================
+   4. MENU ŚRODKOWE (Desktop)
+   ========================================= */
+nav.static-navigation {
+    display: block;
+}
+
+nav.static-navigation ul.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+nav.static-navigation ul.nav-links li a {
+    color: rgb(40, 40, 40); /* Ciemny tekst na start */
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+nav.static-navigation ul.nav-links li a:hover {
+    color: #00C853; 
+}
+
+/* Biały tekst menu po scrollu */
+header.site-header.scrolled nav.static-navigation ul.nav-links li a {
+    color: #ffffff;
+}
+
+header.site-header.scrolled nav.static-navigation ul.nav-links li a:hover {
+    color: #00C853; 
+}
+
+/* =========================================
+   5. PRZYCISK W HEADERZE
+   ========================================= */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+a.btn-header {
+    background-color: #00C853;
+    color: #000000;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+a.btn-header:hover {
+    background-color: #00e660;
+    transform: scale(1.05);
+}
+
+/* =========================================
+   6. MENU MOBILNE (Hamburger)
+   ========================================= */
+button.mobile-menu-toggle {
+    display: none; 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0;
+    position: relative;
+    z-index: 999999; /* Musi być wyżej niż panel boczny */
+}
+
+/* Domyślnie ciemne paski hamburgera (na jasnym tle strony) */
+button.mobile-menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Zmiana pasków hamburgera na białe po scrollu ORAZ po kliknięciu */
+header.site-header.scrolled button.mobile-menu-toggle span,
+button.mobile-menu-toggle.active span {
+    background-color: #ffffff;
+}
+
+/* =========================================
+   7. PANEL BOCZNY (Wsuwane menu na telefonach)
+   ========================================= */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0; 
+    width: 100%; 
+    height: 100vh; 
+    background-color: #0d0d0d; 
+    z-index: 99998; /* Pod hamburgerem, nad stroną */
+    
+    transform: translateX(100%); 
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
+    visibility: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-overlay.active {
+    transform: translateX(0); 
+    visibility: visible;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.5); 
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.mobile-nav-links li {
+    margin: 25px 0;
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links a {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+}
+
+.mobile-nav-links a:hover {
+    color: #00C853; 
+}
+
+/* Kaskadowa animacja linków przy wysuwaniu */
+.mobile-menu-overlay.active .mobile-nav-links li {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
+.mobile-menu-overlay.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
+
+/* =========================================
+   8. RESPONSYWNOŚĆ (Media Queries)
+   ========================================= */
+@media (max-width: 1100px) {
+    nav.static-navigation {
+        display: none; /* Ukrywamy środkowe menu na tabletach/telefonach */
+    }
+    button.mobile-menu-toggle {
+        display: flex; /* Pokazujemy hamburgera */
+    }
+    .header-container {
+        padding: 0 20px;
+    }
+
+    .logo-wrapper img.logo-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-actions a.btn-header {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1101px) {
+    .mobile-menu-overlay {
+        display: none !important; /* Totalna blokada menu mobilnego na komputerach */
+    }
+}
+
+/* =========================================
+   FIX: CZCIONKA OPEN SANS W HEADERZE
+   ========================================= */
+header.site-header, 
+header.site-header a, 
+header.site-header span, 
+.mobile-nav-links a,
+a.btn-header {
+    font-family: 'Open Sans', sans-serif !important;
+}

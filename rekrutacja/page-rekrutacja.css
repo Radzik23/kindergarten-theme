@@ -1,0 +1,401 @@
+/* =========================================
+   STYLE DLA PODSTRONY REKRUTACJA
+   ========================================= */
+
+/* --- GLOBALNE --- */
+.recruitment-page h2.section-title {
+    color: #0b2514;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.recruitment-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 1. HERO SECTION --- */
+.recruitment-hero {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content .badge {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.hero-content h1 {
+    color: #0b2514;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    color: #475569;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #4ade80;
+    color: #0b2514;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #22c55e;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #0b2514;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 2px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    border-color: #0b2514;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.hero-image img {
+    width: 80%;
+    border-radius: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+/* --- 2. KROKI REKRUTACJI --- */
+.recruitment-steps {
+    margin-bottom: 80px;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    background-color: #f0fdf4;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+}
+
+.step-card h3 {
+    color: #0b2514;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.step-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- 3. DOKUMENTY --- */
+.recruitment-documents {
+    margin-bottom: 80px;
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.doc-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doc-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.doc-card h3 {
+    color: #0b2514;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.doc-size {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.btn-download {
+    background-color: #f1f5f9;
+    color: #0b2514;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #e2e8f0;
+}
+
+/* --- 4. FORMULARZ (Biała karta) --- */
+.recruitment-form-section {
+    margin-bottom: 60px;
+}
+
+.form-card {
+    background-color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+}
+
+.form-card h2 {
+    color: #0b2514;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* Stylizacja Contact Form 7 */
+.cf7-rekrutacja-wrapper label {
+    display: block;
+    color: #0b2514;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.cf7-rekrutacja-wrapper input[type="text"],
+.cf7-rekrutacja-wrapper input[type="email"],
+.cf7-rekrutacja-wrapper input[type="tel"],
+.cf7-rekrutacja-wrapper select,
+.cf7-rekrutacja-wrapper textarea {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    color: #0b2514;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.cf7-rekrutacja-wrapper input:focus,
+.cf7-rekrutacja-wrapper select:focus,
+.cf7-rekrutacja-wrapper textarea:focus {
+    outline: none;
+    border-color: #4ade80;
+    background-color: #ffffff;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+}
+
+.section-label {
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    margin-bottom: 10px !important;
+}
+
+/* Radio i Checkboxy w poziomie */
+.wpcf7-radio, .wpcf7-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.wpcf7-list-item {
+    margin: 0 !important;
+}
+
+.wpcf7-list-item-label {
+    font-weight: normal !important;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+/* Przycisk Wyślij */
+.cf7-rekrutacja-wrapper input[type="submit"] {
+    background-color: #4ade80;
+    color: #0b2514;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.cf7-rekrutacja-wrapper input[type="submit"]:hover {
+    background-color: #22c55e;
+}
+
+/* --- RWD (Dla telefonów) --- */
+@media (max-width: 992px) {
+    .recruitment-hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .steps-grid, .docs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .steps-grid, .docs-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+    .form-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================
+   MODAL RODO (Wyskakujące okienko)
+   ========================================= */
+.rodo-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 37, 20, 0.8); /* Ciemnozielone tło */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ukryte na start */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.rodo-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.rodo-modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 24px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.rodo-modal-overlay.active .rodo-modal-content {
+    transform: translateY(0);
+}
+
+.rodo-modal-content h3 {
+    color: #0b2514;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.rodo-modal-content p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,116 @@
+/* =========================================
+   STYLE DLA POLITYKI PRYWATNOŚCI
+   ========================================= */
+
+.policy-page {
+    background-color: #fafaf9; /* Jasny kremowy jak na innych podstronach */
+    padding-top: 140px;
+    padding-bottom: 100px;
+}
+
+.policy-page .container {
+    max-width: 900px; /* Węższy kontener, żeby tekst lepiej się czytało */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.policy-card {
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.policy-title {
+    color: #0b2514;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.policy-intro {
+    color: #475569;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+.policy-content h2 {
+    color: #0b2514;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0fdf4; /* Delikatne podkreślenie */
+}
+
+.policy-content p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.policy-content ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.policy-content li {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    position: relative;
+    list-style-type: none; /* Ukrywamy standardowe kropki */
+}
+
+/* Własne zielone kropki do listy */
+.policy-content li::before {
+    content: "•";
+    color: #4ade80;
+    font-size: 1.5rem;
+    position: absolute;
+    left: -20px;
+    top: -4px;
+}
+
+.policy-footer {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-return {
+    display: inline-block;
+    color: #0b2514;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 24px;
+    background-color: #f1f5f9;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-return:hover {
+    background-color: #4ade80;
+    transform: translateY(-2px);
+}
+
+/* RWD - telefony */
+@media (max-width: 768px) {
+    .policy-page {
+        padding-top: 100px;
+    }
+    .policy-card {
+        padding: 30px 20px;
+    }
+    .policy-title {
+        font-size: 2rem;
+    }
+}
