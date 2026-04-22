@@ -1,70 +1,87 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+# Zakatek Odkrywcow - motyw WordPress
 
-_s
-===
+Niestandardowy motyw WordPress dla strony przedszkola **Zakatek Odkrywcow**.
+Motyw bazuje na `_s` (Underscores), ale zawiera wlasne szablony, style i logike
+pod konkretna strone placowki.
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+## Co zawiera strona
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+- Strone glowna z sekcjami: hero, o nas, misja, rekrutacja, opinie i kontakt
+- Dedykowana podstrone `Rekrutacja` z formularzem i sekcja dokumentow
+- Dedykowana podstrone `Kadra i Zespol` z rozbudowana prezentacja zalozycielki
+- Dedykowana podstrone `Galeria Przedszkola` z filtrowaniem i lightboxem
+- Dedykowana podstrone `Polityka Prywatnosci`
+- Karuzele opinii rodzicow (Swiper)
+- Modal RODO dla formularzy
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+## Funkcje motywu
 
-Installation
----------------
+- Wlasny typ wpisu `opinie` (opinie rodzicow)
+- Wlasny typ wpisu `galeria_foto` (zdjecia do galerii)
+- Wlasna taksonomia `kategoria_galerii` (kategorie filtrowania galerii)
+- Warunkowe dolaczanie CSS/JS na wybranych podstronach
+- Globalne style motywu + oddzielne style dla podstron
+- Defer dla skryptow (z wyjatkiem krytycznych skryptow WP/jQuery)
 
-### Requirements
+## Wymagania
 
-`_s` requires the following dependencies:
+- WordPress 6.x
+- PHP 7.4+ (zalecane 8.x)
+- Node.js i npm (do narzedzi deweloperskich)
+- Composer (do narzedzi lintujacych PHP)
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+### Wymagane wtyczki WordPress
 
-### Quick Start
+- **Advanced Custom Fields (ACF)** - pola dla opinii (np. tresc, ocena, opis autora, zdjecie autora)
+- **Contact Form 7** - formularze kontaktowe i rekrutacyjne
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+## Instalacja
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+1. Skopiuj motyw do katalogu:
+   `wp-content/themes/zakatek-odkrywcow`
+2. W panelu WordPress aktywuj motyw `Zakatek odkrywcow`.
+3. Zainstaluj i aktywuj wymagane wtyczki (ACF, Contact Form 7).
+4. Utworz strony i przypisz im odpowiednie szablony:
+   - `Rekrutacja` -> `Template Name: Rekrutacja`
+   - `Kadra i Zespol` -> `Template Name: Kadra i Zespol`
+   - `Galeria Przedszkola` -> `Template Name: Galeria Przedszkola`
+   - `Polityka Prywatnosci` -> `Template Name: Polityka Prywatnosci`
+5. Uzupelnij tresci, rekordy CPT i obrazy w panelu WordPress.
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+## Struktura projektu (najwazniejsze pliki)
 
-### Setup
+- `functions.php` - rejestracja CPT, taksonomii, enqueue skryptow i styli
+- `front-page.php` - glowny landing page
+- `style.css` - globalne style strony glownej
+- `rekrutacja/page-rekrutacja.php` - szablon podstrony rekrutacji
+- `kadra/page-kadra.php` - szablon podstrony kadry
+- `gallery/page-gallery.php` - szablon podstrony galerii
+- `polityka-prywatnosci/page-polityka.php` - szablon polityki prywatnosci
+- `js/front-page.js` - scroll, modal RODO, swiper opinii, "czytaj wiecej"
+- `js/header.js` - zachowanie naglowka i menu mobilnego
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+## Development
 
-```sh
-$ composer install
-$ npm install
+Zainstaluj zaleznosci:
+
+```bash
+composer install
+npm install
 ```
 
-### Available CLI commands
+Dostepne komendy:
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+- `composer lint:wpcs` - standardy kodu PHP (WordPress Coding Standards)
+- `composer lint:php` - sprawdzenie skladni PHP
+- `composer make-pot` - generowanie pliku tlumaczen
+- `npm run lint:js` - lint JavaScript
+- `npm run lint:scss` - lint SCSS
+- `npm run compile:css` - kompilacja SCSS do CSS
+- `npm run compile:rtl` - generowanie `style-rtl.css`
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+## Uwagi implementacyjne
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
-
-Good luck!
+- Swiper ladowany jest z CDN (`cdn.jsdelivr.net`).
+- Czcionka Open Sans ladowana jest z Google Fonts.
+- Dane formularzy sa obslugiwane przez Contact Form 7 i konfiguracje formularzy w panelu WP.
+- Opinie i galeria opieraja sie o dane z panelu WP (CPT + ACF).
